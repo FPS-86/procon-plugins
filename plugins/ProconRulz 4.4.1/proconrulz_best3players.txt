@@ -1,0 +1,29 @@
+#####################################################
+##### BEST 3 PLAYERS ##### by tarreltje & bambam
+# reports after top player 10 kills,
+# then each time leader changes
+#####################################################
+
+On Kill;Incr %m_kills%;
+# + Log %p% with %m_kills% kills;Set %server_m_report% 1;Set %server_m_report_reason% ".Log."
+
+On Kill;If %m_kills% > %server_m_kills[1]%
+  If %m_kills% > 10;If %p% != %server_m_player[1]%;Set %server_m_report% 1;Set %server_m_report_reason% "New #1"
+  If %p% == %server_m_player[2]%;Set %server_m_kills[2]% %server_m_kills[1]%;Set %server_m_player[2]% %server_m_player[1]%;Set %server_m_player[1]% %p%;Set %server_m_kills[1]% %m_kills%
+  If %p% != %server_m_player[1]%;If %p% != %server_m_player[2];Set %server_m_kills[3]% %server_m_kills[2]%;Set %server_m_player[3]% %server_m_player[2]%;Set %server_m_kills[2]% %server_m_kills[1]%;Set %server_m_player[2]% %server_m_player[1]%;
+  Set %server_m_player[1]% %p%;Set %server_m_kills[1]% %m_kills%;
+  
+On Kill;If %m_kills% > %server_m_kills[2]%;If %m_kills% <= %server_m_kills[1]%;If %p% != %server_m_player[1]%;
+  If %p% != %server_m_player[2]%;Set %server_m_kills[3]% %server_m_kills[2]%;Set %server_m_player[3]% %server_m_player[2]%
+  Set %server_m_player[2]% %p%
+  Set %server_m_kills[2]% %m_kills%;
+  
+On Kill;If %m_kills% > %server_m_kills[3]%;If %m_kills% <= %server_m_kills[2]%;If %p% != %server_m_player[2]%;Set %server_m_player[3]% %p%;Set %server_m_kills[3]% %m_kills%;
+
+On Kill;Incr %server_m_killcount%;If %server_m_killcount% > 70;Set %server_m_report% 1;Set %server_m_report_reason% "------"
+
+####### Output report if server_m_report has been set
+On Kill;If %server_m_report% == 1;
+    Say ----%server_m_report_reason%-------- Most kills by -----------------
+    Say [1st] %server_m_player[1]% %server_m_kills[1]%, [2nd] %server_m_player[2]% %server_m_kills[2]%, [3rd] %server_m_player[3]% %server_m_kills[3]%
+    Set %server_m_report% 0;Set %server_m_killcount% 0

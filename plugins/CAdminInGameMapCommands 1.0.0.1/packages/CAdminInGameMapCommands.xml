@@ -1,0 +1,36 @@
+<package>
+	<released>true</released>
+	
+	<uid>CAdminInGameMapCommands</uid>
+	<version>1.0.0.1</version>
+	<type>plugin</type>
+
+	<name>Admin InGame Map Commands</name>
+	<image>http://phogue.net/procon/packages/phil_k/logo.png</image>
+	<forumlink><![CDATA[https://forum.myrcon.com/showthread.php?1856-Admin-InGame-Map-Commands]]></forumlink>
+	<author>Phil_K</author>
+	<website><![CDATA[http://www.phogue.net/forumvb/member.php?481-Phil_K]]></website>
+
+	<tags>
+		<tag>plugin</tag>
+		<tag>map</tag>
+		<tag>rotation</tag>
+		<tag>change map</tag>
+		<tag>admin</tag>
+		<tag>message</tag>
+		<tag>bfbc</tag>
+		<tag>moh</tag>
+	</tags>
+
+	<description>Provides in-game commands for maplist manipulations. Those can be to define the next
+    		    map to be run or to query available maps for the running gametype. It interacts with
+    		    BasicInGameInfo and InGameAdmin.</description>
+
+	<files>
+		<file path="plugins/BFBC2/CAdminInGameMapCommands.cs"/>
+		<file path="plugins/BFBC2/CAdminInGameMapCommands_GameServer.inc"/>
+		<file path="plugins/MOH/CAdminInGameMapCommands.cs"/>
+		<file path="plugins/MOH/CAdminInGameMapCommands_GameServer.inc"/>
+		<file path="plugins/CAdminInGameMapCommands.inc"/>
+	</files>
+</package>

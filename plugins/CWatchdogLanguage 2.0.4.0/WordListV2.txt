@@ -1,0 +1,73 @@
+;1
+pd
+fdp
+encul
+baise
+5;
+bullshit
+fuck
+ufck
+connard
+abruti
+;10
+batar
+bastar
+groscon
+R/[^a-z]{1}n[ ]*t[ ]*m[^a-z]{1,}[ .]*
+R/[^a-z]{1}p[ ]*u[ ]*t[ ]*e[^a-z]{1,}[ .]*
+;15
+R/[^a-z]{1}p[ ]*[u]{1,}[ ]*t[ ]*[a]{1,}[ ]*[i]{1,}[ ]*[n]{1,}[^a-z]{1,}[ .]*
+R/[^a-z]{1}con[ne]*[^a-z]{1,}[ .]*
+R/[^a-z]{1}[ ]*con[ne]*[^a-z]{1,}[ .]*
+R/[^a-z]{1}co[n]{1,}[a]{1,}[r]{1,}[d]{1,}[^a-z]{1,}[ .]*
+R/a[s$]{1,}h[0o]{1,}le[^a-z]{1,}[ .]*
+;20
+suck
+R/salop[e3]{1,}[^a-z]{1,}[ .]*
+R/[^a-z]{1}cul[!.?]*[^a-z]{1,}[ .]*
+R/[^a-z]{1}couille[s]*[^a-z]{1,}[ .]*
+R/[^a-z]{1}[1i!e3]{1,}[gh896]{1,}[aero40]{1,}[s]*[^a-z]{1,}[ .]*
+;25
+R/p[u]*t[ain]{1,}[s]*[^a-z]{1,}[ .]*
+R/bou[f]{1,}on[nes]*[^a-z]{1,}[ .]*
+R/f[ ]*d[ ]*p[^a-z]{1,}[ .]*
+R/[^a-z]{1}as[s]{1,}[^a-z]{1,}[ .]*
+R/[^a-z]{1}as[s]{1,}[ ]*twat[^a-z]{1,}[ .]*
+;30
+R/[^a-z]{1}sodomi[ser]*[^a-z]{1,}[ .]*
+R/ferme ta gueule
+R/faire mettre
+R/faire foutre
+R/niquer ta mere
+;35
+R/gro[s]{1,}[e]* merde
+R/serve[u]*r de merde
+R/[^a-z]{1}foutr[es]{1,}[^a-z]{1,}[ .]*
+R/[^a-z]{1}tg[^a-z]{1,}[ .]*
+R/[^a-z]{1}f[ ]*u{1,}[^a-z]{1,}[ .]*
+;40
+R/[^a-z]{1}f[ ]*y{1,}[^a-z]{1,}[ .]*
+R/[^a-z]{1}f[ ]*u[ ]*c[ ]*k[^a-z]{1,}[ .]*
+R/[^a-z]{1}f[ ]*[uo][ ]*c[ ]*k[ ]*e*[ ]*r*[^a-z]{1,}[ .]*
+R/[^a-z]{1}tarlou[zs]e[^a-z]{1,}[ .]*
+R/[^a-z]{1}pr[1i!]ck[^a-z]{1,}[ .]*
+;45
+R/[^a-z]{1}nique[ers]*[^a-z]{1,}[ .]*
+R/[^a-z]{1}f[4a][g]{1,}[oti]*[^a-z]{1,}[ .]*
+R/[^a-z]{1}whore[^a-z]{1,}[ .]*
+R/[^a-z]{1}c[0o]{1,}ck[ .]*
+R/[^a-z]{1}sl[u]{1,}t[^a-z]{1,}[ .]*
+;50
+R/[^a-z]{1}bitch[ .]*
+dick
+R/[^a-z]{1}d[i]{1,}p[ ]*sh[i1]{1,}t[ .]*
+nazi
+jew
+;55
+beaner
+R/piss off
+R/[^a-z]{1}ars[e]{1,}[^a-z]{1,}[ .]*
+R/[^a-z]{1}ars[e]{1,}[ ]*h[Oo]{1,}l[e3]{1,}[^a-z]{1,}[ .]*
+sodding
+;60
+R/sperme[^a-z]{1,}[ .]*

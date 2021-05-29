@@ -1,0 +1,7 @@
+#####################################################
+#  Server !rules messages
+#####################################################
+
+On Say;Text !rules
+    PlayerSay === ProconRulz is active. ===
+    PlayerSay === Teamwork is everything - go for the objective ===

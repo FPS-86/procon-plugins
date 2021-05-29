@@ -1,0 +1,30 @@
+<package>
+	<released>true</released>
+	
+	<uid>CAutoRoundRestarter</uid>
+	<version>1.2.0.5</version>
+	<type>plugin</type>
+
+	<name>Automatic Round Restarter</name>
+	<image>http://phogue.net/procon/packages/phil_k/logo.png</image>
+	<forumlink><![CDATA[https://forum.myrcon.com/showthread.php?2848-Automatic-Round-Restarter]]></forumlink>
+	<author>Phil_K</author>
+	<website><![CDATA[http://www.phogue.net/forumvb/member.php?481-Phil_K]]></website>
+
+	<tags>
+		<tag>watchdog</tag>
+		<tag>plugin</tag>
+		<tag>round</tag>
+		<tag>battlelog</tag>
+		<tag>bf3</tag>
+		<tag>bf4</tag>
+	</tags>
+
+	<description>Used to restart the round if actual player count hits your roundRestartCount to prevent battlelog dead-locks.</description>
+
+	<files>
+		<file path="plugins/BF3/CAutoRoundRestarter.cs"/>
+		<file path="plugins/BF4/CAutoRoundRestarter.cs"/>
+		<file path="plugins/CAutoRoundRestarter.inc"/>
+	</files>
+</package>

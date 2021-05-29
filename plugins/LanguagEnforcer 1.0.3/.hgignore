@@ -1,0 +1,10 @@
+syntax: glob
+obj/*
+Forms/*
+Properties/*
+Controls/*
+*.csproj
+*.ico
+*config
+syntax: regexp
+^(?:(?!LanguageEnforcer).)*\.cs$

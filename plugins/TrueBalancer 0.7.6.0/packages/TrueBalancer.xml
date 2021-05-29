@@ -1,0 +1,39 @@
+<package>
+	<released>true</released>
+
+	<uid>TrueBalancer</uid>
+	<version>0.7.6.0</version>
+	<type>plugin</type>
+
+	<name>TrueBalancer</name>
+	<image></image>
+
+	<forumlink><![CDATA[http://phogue.net/forum/viewtopic.php?f=18&t=991]]></forumlink>
+	<author>[***]Panther</author>
+	<website>www.fallobstclan.de</website>
+	<tags>
+		<tag>moh</tag>
+		<tag>medal</tag>
+		<tag>honor</tag>
+		<tag>bfbc2</tag>
+		<tag>bad</tag>
+		<tag>company</tag>
+		<tag>auto</tag>
+		<tag>balance</tag>
+		<tag>autobalance</tag>
+		<tag>truebalancer</tag>
+	</tags>
+	<description>This plugin is used to autobalance Teams.  It will switch the last player who joined the team. This plugin works with BC2 and MoH.</description>
+
+	<files>
+		<file path="plugins/TrueBalancer.inc"/>
+		<file path="plugins/BFBC2/TrueBalancer.CompareTeams.inc"/>
+		<file path="plugins/BFBC2/TrueBalancer.cs"/>
+		<file path="plugins/BFBC2/TrueBalancer.LevelStart.inc"/>
+		<file path="plugins/BFBC2/TrueBalancer.MovePlayer.inc"/>
+		<file path="plugins/MOH/TrueBalancer.CompareTeams.inc"/>
+		<file path="plugins/MOH/TrueBalancer.cs"/>
+		<file path="plugins/MOH/TrueBalancer.LevelStart.inc"/>
+		<file path="plugins/MOH/TrueBalancer.MovePlayer.inc"/>
+	</files>
+</package>

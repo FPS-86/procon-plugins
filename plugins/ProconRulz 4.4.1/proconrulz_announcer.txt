@@ -1,0 +1,12 @@
+#################################################################
+#Various Kill Announcements
+
+#################################################################
+# Melee Kills Announcer
+On Kill;Weapon Weapons/Knife/Knife;Say %p% slit the throat of %v% !!!
+On Kill;Weapon Melee;Say %p% grabbed and stabbed %v% !!!
+On Kill;If %wk% contains Defib;Say %p% zapped %v% with the Defib !!!
+On Kill;If %wk% contains Repair;Say %p% killed %v% with the Repair Tool !!!
+
+##### FIRSTBLOOD #####
+On Kill;ServerFirst;Say %pt% %p% has FIRST BLOOD by killing %v% with %w%

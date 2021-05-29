@@ -1,0 +1,59 @@
+####################################################
+#sniper limit by tarreltje V2.3 - tweaked by Bambam
+# Slot is reserved by SniperRifle kill
+# Slot is lost by non-SniperRifle/Handgun kill
+# Max # snipers is set in %server_sniperlimit% var
+####################################################
+
+# DEBUG
+On Kill;Log %p% killed %v% with %d% %wk%
+On Spawn;Log %p% spawned on %ptk%
+
+# SET THE MAX # OF SNIPERS HERE:
+On Kill;ServerFirst;Set %server_sniperlimit% 3
+On Say;ServerFirst;Set %server_sniperlimit% 3
+
+# SNIPER LOG MESSAGES
+On Spawn;If %server_sl_sniper[%p%]% == 1;Log Sniper %pt% %p% re-spawned. %server_sl_total[%ptk%]% snipers on team %ptk%
+On Kill;If %server_sl_sniper[%v%]% == 1;Log Sniper %vtk% %v% killed. %server_sl_total[%vtk%]% snipers on team %vtk%
+
+# SNIPER KILL CHECKS either over limit (so kill), existing sniper (do nothing), new sniper (reserve slot)
+On Kill;Damage SniperRifle;
+    If %server_sl_total[%ptk%]% >= %server_sniperlimit%;If %server_sl_setsniper[%p%]% == 0;if %server_sl_sniper[%p%]% == 0;TeamSay %p% killed by SNIPER LIMIT for %pt%;Log Sniper Limit max %server_sniperlimit% snipers each team !!! (now Kill %p%);Kill
+    If %server_sl_sniper[%p%]% == 1;Log %ptk% %p% still a sniper, %server_sl_total[%ptk%]% snipers on team %ptk%
+    If %server_sl_sniper[%p%]% == 0;Incr %server_sl_total[%ptk%]%;Set %server_sl_sniper[%p%]% 1;Set %server_sl_x% %server_sl_total[%ptk%]%;Set %server_sl_snipername[%ptk%][%server_sl_x%]% %p%;PlayerSay %p% has SNIPER slot on %pt% %server_sl_total[%ptk%]%/%server_sniperlimit%;Log %ptk% %p% is new sniper, %server_sl_total[%ptk%]%/%server_sniperlimit% snipers on team %ptk%
+
+# SNIPER KILL CHECKS either over limit (so kill), existing sniper (do nothing), new sniper (reserve slot)
+On Kill;Damage DMR;
+    If %server_sl_total[%ptk%]% >= %server_sniperlimit%;If %server_sl_setsniper[%p%]% == 0;if %server_sl_sniper[%p%]% == 0;TeamSay %p% killed by SNIPER LIMIT for %pt%;Log Sniper Limit max %server_sniperlimit% snipers each team !!! (now Kill %p%);Kill
+    If %server_sl_sniper[%p%]% == 1;Log %ptk% %p% still a sniper, %server_sl_total[%ptk%]% snipers on team %ptk%
+    If %server_sl_sniper[%p%]% == 0;Incr %server_sl_total[%ptk%]%;Set %server_sl_sniper[%p%]% 1;Set %server_sl_x% %server_sl_total[%ptk%]%;Set %server_sl_snipername[%ptk%][%server_sl_x%]% %p%;PlayerSay %p% has SNIPER slot on %pt% %server_sl_total[%ptk%]%/%server_sniperlimit%;Log %ptk% %p% is new sniper, %server_sl_total[%ptk%]%/%server_sniperlimit% snipers on team %ptk%
+
+# SNIPER KILL CHECKS either over limit (so kill), existing sniper (do nothing), new sniper (reserve slot)
+On Kill;Weapon U_Scout;Not Damage SniperRifle;
+    If %server_sl_total[%ptk%]% >= %server_sniperlimit%;If %server_sl_setsniper[%p%]% == 0;if %server_sl_sniper[%p%]% == 0;TeamSay %p% killed by SNIPER LIMIT for %pt%;Log Sniper Limit max %server_sniperlimit% snipers each team !!! (now Kill %p%);Kill
+    If %server_sl_sniper[%p%]% == 1;Log %ptk% %p% still a sniper, %server_sl_total[%ptk%]% snipers on team %ptk%
+    If %server_sl_sniper[%p%]% == 0;Incr %server_sl_total[%ptk%]%;Set %server_sl_sniper[%p%]% 1;Set %server_sl_x% %server_sl_total[%ptk%]%;Set %server_sl_snipername[%ptk%][%server_sl_x%]% %p%;PlayerSay %p% has SNIPER slot on %pt% %server_sl_total[%ptk%]%/%server_sniperlimit%;Log %ptk% %p% is new sniper, %server_sl_total[%ptk%]%/%server_sniperlimit% snipers on team %ptk%
+
+# FREE UP SNIPER SLOT IF SNIPER HAS NON-SNIPER KILL OR SNIPER LEAVES    
+On Kill;Not Damage SniperRifle;Not Damage DMR;Not Damage Handgun;Not Weapon U_Scout;Not Weapon Melee;If %server_sl_sniper[%p%]% == 1;Set %server_sl_sniper[%p%]% 0;Decr %server_sl_total[%ptk%]%;TeamSay %pt% %p% gave up SNIPER slot (used %w%);Log Ex-sniper %p% used %d% %wk%, %server_sl_total[%ptk%]% snipers on team %ptk%
+On Leave;If %server_sl_sniper[%p%]% == 1;Set %server_sl_sniper[%p%]% 0;Decr %server_sl_total[%ptk%]%;TeamSay %pt% %p% gave up SNIPER slot (left server);Log Sniper %pt% %p% left server. %server_sl_total[%ptk%]% snipers on team %ptk%
+
+# !snipers / !sniperx / !setsniper INFO MESSAGES
+
+#!snipers tells you the current count for your team and sniper player names
+On Say;Text !snipers;
+    PlayerSay Sniper limit: Reserve slot with sniper kill, until non-sniper/handgun/knife kill.
+    If %server_sl_total[%ptk%]% == 0;PlayerSay %pt% 0/%server_sniperlimit% SNIPERS on team %pt%
+    If %server_sl_total[%ptk%]% > 0;PlayerSay %pt% SNIPER[1/%server_sniperlimit%] is %server_sl_snipername[%ptk%][1]%
+    If %server_sl_total[%ptk%]% > 1;PlayerSay %pt% SNIPER[2/%server_sniperlimit%] is %server_sl_snipername[%ptk%][2]%
+    If %server_sl_total[%ptk%]% > 2;PlayerSay %pt% SNIPER[3/%server_sniperlimit%] is %server_sl_snipername[%ptk%][3]%
+    If %server_sl_total[%ptk%]% > 3;PlayerSay %pt% SNIPER[4/%server_sniperlimit%] is %server_sl_snipername[%ptk%][4]%
+    If %server_sl_total[%ptk%]% > 4;PlayerSay %pt% SNIPER[5/%server_sniperlimit%] is %server_sl_snipername[%ptk%][5]%
+
+#!sniperx just gives the sniper counts for both teams
+On Say;Text !sniperx;
+    PlayerSay SNIPERS: Team 1: %server_sl_total[1]%/%server_sniperlimit%, Team 2: %server_sl_total[2]%/%server_sniperlimit%
+
+#!setsniper <name-substring> is admin-only command to allocate a sniper slot to player. E.g. "!setsniper bam"    
+On Say;Admin;Text !setsniper;TargetPlayer;Set %server_sl_setsniper[%t%]% 1;PlayerSay %t% guaranteed a SNIPER slot until round end

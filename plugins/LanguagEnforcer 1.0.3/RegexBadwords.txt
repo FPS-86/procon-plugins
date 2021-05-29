@@ -1,0 +1,29 @@
+n[o0qc]{2,}[pbd]# noob
+b[o0qc]{2,}n# boon
+\bn[uoa]*b+s*\b# nob /nab
+^\W*(g+\W+)?(so\W+)?(win\W)*(((to{2,})|(2))\W+)?(very\W+)?(([e3][a4][sz5][yi1]?)|(e+z+))(\Wwin)*
+\bf+\W*u+\b# FU
+\b(?!factor)(?!face)f+\W*[iua]+\W*c# fuck
+f+\W*u+\W*[ckq](?<!dafuq)(?!ile)# fuck
+\bfk\b# fuck
+\bass(?!(ign))(i\W)?(?![aeoi])# ass/assi
+(?<![lmprd])(voll)?assi?\b# ass/assi
+\bffs\b# ffs
+\bbs\b# bs
+\blow(ers)?\b# low
+ga+y
+fa+g
+\bschei(?!n)# scheiss
+lo+s+e+r(?<!closer)# loser but not closer
+crap(?<!skyscrap)#crap but not skyscraper
+\bfgt\b# faggot
+bi+tc
+sau\b# ending with sau (=pig)
+^mimimi
+\bp+i+g+\b
+((get)|(grow))( some)? ba+l+s# grow some balls
+shit(?!\W+so?r?ry)
+\bk+\W*u+\W*r+\W*w+\W*[ao]+
+
+{racism}
+ju+de# jude

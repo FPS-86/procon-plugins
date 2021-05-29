@@ -1,0 +1,31 @@
+##################################################
+# Limit snipers to a single squad V1.0
+# idea credit staazvaind (rulz by bambam)
+##################################################
+# CHOOSE YOUR SQUAD HERE
+On Init;Set %server_ss_squadname% Echo
+
+On Init;
+    If %server_ss_squadname% == Alpha;Set %server_ss_squad% 1
+    If %server_ss_squadname% == Bravo;Set %server_ss_squad% 2
+    If %server_ss_squadname% == Charlie;Set %server_ss_squad% 3
+    If %server_ss_squadname% == Delta;Set %server_ss_squad% 4
+    If %server_ss_squadname% == Echo;Set %server_ss_squad% 5
+    If %server_ss_squadname% == Foxtrot;Set %server_ss_squad% 6
+    If %server_ss_squadname% == Golf;Set %server_ss_squad% 7
+    If %server_ss_squadname% == Hotel;Set %server_ss_squad% 8
+    If %server_ss_squadname% == India;Set %server_ss_squad% 9
+    If %server_ss_squadname% == Juliet;Set %server_ss_squad% 10
+    If %server_ss_squadname% == Kilo;Set %server_ss_squad% 11
+    If %server_ss_squadname% == Lima;Set %server_ss_squad% 12
+    If %server_ss_squadname% == Mike;Set %server_ss_squad% 13
+    
+On Kill;Damage SniperRifle;Log %pt% %p% sniper kill with %d% %w% in squad %ps%;
+
+On Kill;Damage SniperRifle;If %psk% != %server_ss_squad%;
+    Log %p% %ps% not in %server_ss_squadname% squad (will be slayed);
+    TeamSay Sniper Squad is %server_ss_squadname% (limit running);
+    PlayerSay You were slayed for sniper use (must be in %server_ss_squadname% Squad);
+    Kill
+    
+On Say;Text !snipers;PlayerSay Snipers limited to %server_ss_squadname% Squad

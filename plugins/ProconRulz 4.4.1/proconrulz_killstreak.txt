@@ -1,0 +1,22 @@
+######################################################
+# Unreal Tournament Kill Streak Announcer by ty_ger07
+######################################################
+#### Announcements of killstreak ending:
+On Kill;If %server_streak[%v%]% >= 5;Say %p% ENDED %v%'s %server_streak[%v%]%-KILL STREAK with %w%
+On TeamKill;If %server_streak[%v%]% >= 5;Say %p%'s TEAMKILL ENDED %v%'s %server_streak[%v%]%-KILL STREAK with %w%
+On Suicide;If %server_streak[%p%]% >= 5;Say %p% ENDED their %server_streak[%p%]%-KILL STREAK with a SUICIDE
+#### Reset the player's streak count when they are killed:
+On Kill;Set %server_streak[%v%]% 0
+On TeamKill;Set %server_streak[%v%]% 0
+On Suicide;Set %server_streak[%v%]% 0
+#### Reset killincr to 0 if server_streak is 0
+On Kill;If %server_streak[%p%]% == 0;Set %killincr% 0
+#### Accumulate the kill count for each player in a var %server_streak[playername]%
+On Kill;Incr %killincr%;Incr %server_streak[%p%]%;
+#### Say periodic killstreak messages
+On Kill;If %killincr% == 30;Set %killincr% 25;Say GodLike! %p% %server_streak[%p%]% KILL STREAK
+On Kill;If %server_streak[%p%]% == 25;Say GodLike! %p% 25-KILL STREAK
+On Kill;If %server_streak[%p%]% == 20;Say Unstoppable! %p% 20-KILL STREAK
+On Kill;If %server_streak[%p%]% == 15;Say Dominating! %p% 15-KILL STREAK
+On Kill;If %server_streak[%p%]% == 10;Say Rampage! %p% 10-KILL STREAK
+On Kill;If %server_streak[%p%]% == 5;Say Killing Spree! %p% 5-KILL STREAK

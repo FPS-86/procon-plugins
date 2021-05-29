@@ -1,0 +1,9 @@
+V1.0
+- Shows distance of kills you make, and to whom.
+- Two customizable messages, one for headshots, one for normal kills.
+
+V1.1
+- Added a death message showing who killed you, from how far, and weapon used.
+
+V1.2
+- Added admin ability to turn kill notifications, and death notification on/off.

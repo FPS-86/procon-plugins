@@ -1,0 +1,18 @@
+##################################################################################
+# Knife message !knife in-game command
+# Set your knife message with "!knife <message>"
+# Victim will be given that message when you knife them
+# View your message with "!knife?" or anyone's with "!knife? <part player name>"
+# You can check Configs/<server>_proconrulz.ini to see all saved messages
+##################################################################################
+
+On Say;Text !knife?
+    TargetPlayer;Say %t% knife message = %ini_knife_message[%t%]%;End
+    Say Your knife message = %ini_knife_message[%p%]%;End
+    
+On Say;Text !knife;log !knife;Set %ini_knife_message[%p%]% %targettext%;PlayerSay %p% your knife message is set
+
+On Kill;Weapon Melee;If %ini_knife_message[%p%]% != 0
+    VictimSay Message from %p%: %ini_knife_message[%p%]%
+    PlayerSay You told %v%: %ini_knife_message[%p%]%
+    

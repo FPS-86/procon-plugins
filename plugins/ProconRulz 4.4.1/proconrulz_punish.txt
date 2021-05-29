@@ -1,0 +1,23 @@
+#########################################################
+# Teamkill Punisher v1.2
+# Original Author ty_ger07, tweak by bambam
+# Enhancements by russel5
+#########################################################
+
+On Spawn;ServerFirst;Set %ini_punish% 0
+On TeamKill;PlayerSay %p% you TEAMKILLED %v%. Watch your fire! This is your %c% victim.
+On TeamKill;VictimSay %v%: !p or !f
+# Team Kill Tracking Rulz
+On TeamKill;Set %server_lastteamkill[%p%]% %v%
+On TeamKill;Set %server_lastteamkiller[%v%]% %p%
+# Team Kill Punish Rulz
+On Say;Text !p,!punish;If %server_lastteamkiller[%p%]% == 0;PlayerSay %p%: could not find a recent team kill to punish.
+On Say;Text !p,!punish;If %server_lastteamkiller[%p%]% != 0
+	Incr %ini_punish_count[%server_lastteamkiller[%p%]%]%
+	If %ini_punish_count[%p%]% == 4;TempBan 7200 %p% TempBan 2 hours;Set %ini_punish_count[%p%]% 0
+	TargetPlayer %server_lastteamkiller[%p%]%;TargetAction PlayerSay %t% killed for team killing.;TargetAction Kill;TargetConfirm;Set %server_lastteamkiller[%p%]% 0
+# Team Kill Forgive Rulz
+On Say;Text !f,!forgive;If %server_lastteamkiller[%p%]% == 0;PlayerSay %p%: could not find a recent team kill to forgive.
+On Say;Text !f,!forgive;If %server_lastteamkiller[%p%]% != 0;TargetPlayer %server_lastteamkiller[%p%]%;Set %server_lastteamkill[%server_lastteamkiller[%p%]%]% 0;TargetAction PlayerSay %t% was forgiven by %p%.;Set %server_lastteamkiller[%p%]% 0
+#Leave
+On Leave;Set %ini_punish_count[%p%]% 0

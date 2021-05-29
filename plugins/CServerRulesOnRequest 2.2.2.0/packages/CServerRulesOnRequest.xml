@@ -1,0 +1,37 @@
+<package>
+	<released>true</released>
+	
+	<uid>CServerRulesOnRequest</uid>
+	<version>2.2.2.0</version>
+	<type>plugin</type>
+
+	<name>Server rules on request</name>
+	<image>http://phogue.net/procon/packages/phil_k/logo.png</image>
+	<forumlink><![CDATA[http://www.phogue.net/forumvb/showthread.php?4420-Server-Rules-on-Request]]></forumlink>
+	<author>Phil_K</author>
+	<website><![CDATA[http://www.phogue.net/forumvb/member.php?481-Phil_K]]></website>
+
+	<tags>
+		<tag>plugin</tag>
+		<tag>rules</tag>
+		<tag>admin</tag>
+		<tag>message</tag>
+		<tag>bfbc</tag>
+		<tag>moh</tag>
+		<tag>bf3</tag>
+		<tag>bf4</tag>
+		<tag>bfhl</tag>
+    		<tag>bf3</tag>
+	</tags>
+
+	<description>Gives the admin the ability to define a text of rules which is send to the player on his or by admin request.</description>
+
+	<files>
+		<file path="plugins/BF3/CServerRulesOnRequest.cs"/>
+		<file path="plugins/BF4/CServerRulesOnRequest.cs"/>
+		<file path="plugins/BFBC2/CServerRulesOnRequest.cs"/>
+		<file path="plugins/BFHL/CServerRulesOnRequest.cs"/>
+		<file path="plugins/MOH/CServerRulesOnRequest.cs"/>
+		<file path="plugins/CServerRulesOnRequest.inc"/>
+	</files>
+</package>

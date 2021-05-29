@@ -1,0 +1,27 @@
+<package>
+	<released>true</released>
+
+	<uid>CheaterAlert</uid>
+	<version>0.0.3.1</version>
+	<type>plugin</type>
+
+	<name>Cheater Alert</name>
+	<image></image>
+
+	<forumlink><![CDATA[http://www.phogue.net/forumvb/showthread.php?1736]]></forumlink>
+	<author>MorpheusX(AUT)</author>
+	<website><![CDATA[http://www.morpheusx.at/procon/cheateralert]]></website>
+	<tags>
+		<tag>cheateralert</tag>
+		<tag>cheater</tag>
+		<tag>protection</tag>
+                <tag>anticheat</tag>
+                <tag>anticheater</tag>
+	</tags>
+	<description>Cheater Alert is an attempt to provide another cheat-detection system beside PunkBuster. This plugin uses some algorithms and simple mathematics to check players and filter out cheaters. Several stats - ingame as well as global ones - are compared to given values, and each player is ranked in a special security-system.
+</description>
+
+	<files>
+		<file path="plugins/bfbc2/CheaterAlert.cs"/>
+	</files>
+</package>

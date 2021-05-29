@@ -1,0 +1,20 @@
+#################################################################
+# Unreal Tournament Multi Kills Announcer - by Bl1ndy and Panther
+On Spawn;Set %multi% 0
+On Kill;Not Rate 2 4;Set %multi% 0
+On Kill;Rate 10 36;if %multi% > 8;Incr %multi%
+On Kill;Rate 9 32;if %multi% == 8;Incr %multi%
+On Kill;Rate 8 28;if %multi% == 7;Incr %multi%
+On Kill;Rate 7 24;if %multi% == 6;Incr %multi%
+On Kill;Rate 6 20;if %multi% == 5;Incr %multi%
+On Kill;Rate 5 16;if %multi% == 4;Incr %multi%
+On Kill;Rate 4 12;if %multi% == 3;Incr %multi%
+On Kill;Rate 3 8;if %multi% == 2;Incr %multi%
+On Kill;Rate 2 4;if %multi% == 0;Set %multi% 2
+On Kill;if %multi% == 10;Say %p% got AUTObanned for hacks;Ban Hacking/Cheating - AutoTrigger - %p%
+On Kill;if %multi% > 5;Say %p%: -== M-O-N-S-T-E-R - K-I-L-L (%multi% in a row) ==-;
+On Kill;if %multi% == 5;Say %p%: -== ULTRA KILL (%multi% in a row) ==-;
+On Kill;if %multi% == 4;Say %p%: -= MEGA Kill (%multi% in a row) =-;
+On Kill;if %multi% == 3;PlayerSay %p%: "Triple Kill!"
+On Kill;if %multi% == 2;PlayerSay %p%: "Double Kill!"
+

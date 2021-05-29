@@ -1,0 +1,41 @@
+<package>
+	<released>true</released>
+	
+	<uid>CAdminIn_and_SpawnMsg</uid>
+	<version>1.3.6.0</version>
+	<type>plugin</type>
+
+	<name>Admin Announcer and onSpawn Message</name>
+	<image>http://phogue.net/procon/packages/phil_k/logo.png</image>
+	<forumlink><![CDATA[https://forum.myrcon.com/showthread.php?1637-Admin-Announcer-amp-onSpawn-Message]]></forumlink>
+	<author>Phil_K</author>
+	<website><![CDATA[http://www.phogue.net/forumvb/member.php?481-Phil_K]]></website>
+
+	<tags>
+		<tag>plugin</tag>
+		<tag>kick</tag>
+		<tag>ban</tag>
+		<tag>announcement</tag>
+		<tag>admin</tag>
+		<tag>message</tag>
+		<tag>bfbc</tag>
+		<tag>moh</tag>
+		<tag>bf3</tag>
+		<tag>bf4</tag>
+		<tag>bfhl</tag>
+    <tag>bf3</tag>
+	</tags>
+
+	<description>Can announce admin joins, kicks/bans and onSpawn messages to all players. 
+  As an addition you can select to have the server uptime and round time displayed in different places or
+  have joins announced until the first kill. This is very usefull in preround mode.</description>
+
+	<files>
+		<file path="plugins/BF3/CAdminIn_and_SpawnMsg.cs"/>
+		<file path="plugins/BF4/CAdminIn_and_SpawnMsg.cs"/>
+		<file path="plugins/BFBC2/CAdminIn_and_SpawnMsg.cs"/>
+		<file path="plugins/BFHL/CAdminIn_and_SpawnMsg.cs"/>
+		<file path="plugins/MOH/CAdminIn_and_SpawnMsg.cs"/>
+		<file path="plugins/CAdminIn_and_SpawnMsg.inc"/>
+	</files>
+</package>
