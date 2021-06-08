@@ -1,0 +1,1 @@
+this.ExecuteCommand("procon.protected.config.exec", Path.Combine(Path.Combine("PlohoLeagueControls", "BFBC2"), "startmatch.cfg"));
